@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
 
+public enum TipusMusica
+{
+    MusicaDePor,
+    MusicaAlegre,
+    MusicaTrista
+}
+
 public class MusicController : MonoBehaviour {
 
     public float velocitatMusica = 0.5f;
     public GameObject destination;
 
-    private bool musicaDePorActiva = true;
-    private int frequenciaMusicaDePor = 20;
+    private TipusMusica tipusDeMusica = TipusMusica.MusicaDePor;
+    private int frequenciaMusicaDePor = 2;
     private string[] text = new string[3];
     private float distancia;
     // Use this for initialization
@@ -24,7 +31,7 @@ public class MusicController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         distancia = (transform.position - destination.transform.position).magnitude;
-        //Debug.Log(distancia);
+        //Debug.Log(distancia);#
         if ((transform.position-destination.transform.position).magnitude > 4)
         {
             velocitatMusica = 1;
@@ -36,7 +43,7 @@ public class MusicController : MonoBehaviour {
             velocitatMusica = 0.3f+(((distancia-1)*0.7f)/3);
         }
         text[0] = "1 "+velocitatMusica.ToString();
-        text[1] = "3 " + musicaDePorActiva.ToString();
+        text[1] = "2 " + tipusDeMusica.ToString();
         text[2] = "0 " + frequenciaMusicaDePor.ToString();
         System.IO.File.WriteAllLines(System.IO.Directory.GetCurrentDirectory() + "\\HOLA\\HOLA.txt", text);
     }
