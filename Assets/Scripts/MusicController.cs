@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 
 public enum TipusMusica
@@ -15,7 +16,7 @@ public class MusicController : MonoBehaviour {
     public float velocitatMusica = 0.5f;
     public GameObject destination;
 
-    private TipusMusica tipusDeMusica = TipusMusica.MusicaDePor;
+    private TipusMusica tipusDeMusica = TipusMusica.MusicaAlegre;
     private int frequenciaMusicaDePor = 2;
     private string[] text = new string[3];
     private float distancia;
@@ -26,6 +27,7 @@ public class MusicController : MonoBehaviour {
         //System.IO.File.Open()
         text[0] = velocitatMusica.ToString();
         System.IO.File.WriteAllLines(System.IO.Directory.GetCurrentDirectory() + "\\HOLA\\HOLA.txt", text);
+        if (SceneManager.GetActiveScene().name.Equals("Night")) tipusDeMusica = TipusMusica.MusicaDePor;
     }
 	
 	// Update is called once per frame
@@ -34,13 +36,13 @@ public class MusicController : MonoBehaviour {
         //Debug.Log(distancia);#
         if ((transform.position-destination.transform.position).magnitude > 4)
         {
-            velocitatMusica = 1;
+            velocitatMusica = 0.2f;
         }else if ((transform.position - destination.transform.position).magnitude < 1){
-            velocitatMusica = 0.3f;
+            velocitatMusica = 0.09f;
         }
         else
         {
-            velocitatMusica = 0.3f+(((distancia-1)*0.7f)/3);
+            velocitatMusica = 0.09f+(((distancia-1)*0.2f)/3);
         }
         text[0] = "1 "+velocitatMusica.ToString();
         text[1] = "2 " + tipusDeMusica.ToString();
