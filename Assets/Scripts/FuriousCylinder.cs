@@ -27,11 +27,11 @@ public class FuriousCylinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((GameObject.Find("Player").transform.position-transform.position).magnitude < 4 && !actived)
+        if ((GameObject.Find("Player").transform.position-transform.position).magnitude < 3 && !actived)
         {
             float angle = Quaternion.Angle(GameObject.Find("Player").transform.rotation, transform.rotation);
             //Debug.Log(angle);
-            if (angle > 170 && angle < 190) SetActiveFuriousCylinder();
+            if (angle > 160 && angle < 200) SetActiveFuriousCylinder();
         }
         if (up)
         {

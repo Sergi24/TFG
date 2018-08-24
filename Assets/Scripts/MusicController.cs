@@ -8,7 +8,8 @@ public enum TipusMusica
 {
     MusicaDePor,
     MusicaAlegre,
-    MusicaTrista
+    MusicaTrista,
+    MusicaTensa
 }
 
 public class MusicController : MonoBehaviour {
@@ -47,11 +48,13 @@ public class MusicController : MonoBehaviour {
         text[0] = "1 "+velocitatMusica.ToString();
         text[1] = "2 " + tipusDeMusica.ToString();
         text[2] = "0 " + frequenciaMusicaDePor.ToString();
+        //text[3] = "2 " + frequenciaMusicaDePor.ToString();
         System.IO.File.WriteAllLines(System.IO.Directory.GetCurrentDirectory() + "\\HOLA\\HOLA.txt", text);
     }
 
-    public void SetMusicaDePor(int frequenciaMusicaDePor)
+    public void SetFrequenciaMusicaDePor(int frequenciaMusicaDePor)
     {
         this.frequenciaMusicaDePor = frequenciaMusicaDePor;
     }
+
 }
