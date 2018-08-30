@@ -18,9 +18,11 @@ public class MusicController : MonoBehaviour {
     public GameObject destination;
 
     private TipusMusica tipusDeMusica = TipusMusica.MusicaAlegre;
-    private int frequenciaMusicaDePor = 2;
-    private string[] text = new string[3];
-    private float distancia;
+    private int frequenciaMusicaDePor = 2, tonalitat = 0;
+    private bool melodiaActivada = true;
+
+    private string[] text = new string[6];
+    private float distancia, volumGeneral = 1;
     // Use this for initialization
     void Start () {
         //Debug.Log(System.IO.Directory.GetCurrentDirectory());
@@ -45,9 +47,17 @@ public class MusicController : MonoBehaviour {
         {
             velocitatMusica = 0.09f+(((distancia-1)*0.2f)/3);
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            melodiaActivada = !melodiaActivada;
+        }
+        velocitatMusica = 0.1f;
         text[0] = "1 "+velocitatMusica.ToString();
         text[1] = "2 " + tipusDeMusica.ToString();
         text[2] = "0 " + frequenciaMusicaDePor.ToString();
+        text[3] = "3 " + melodiaActivada.ToString();
+        text[4] = "0 " + tonalitat.ToString();
+        text[5] = "1 " + volumGeneral.ToString();
         //text[3] = "2 " + frequenciaMusicaDePor.ToString();
         System.IO.File.WriteAllLines(System.IO.Directory.GetCurrentDirectory() + "\\HOLA\\HOLA.txt", text);
     }
