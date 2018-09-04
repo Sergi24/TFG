@@ -12020,7 +12020,7 @@ MonoBehaviour:
   radialBlurIterations: 2
   sunColor: {r: 1, g: 0.57221097, b: 0.18382353, a: 1}
   sunThreshold: {r: 0.7647059, g: 0.55375254, b: 0, a: 1}
-  sunShaftBlurRadius: 3.78
+  sunShaftBlurRadius: 3.87
   sunShaftIntensity: 0.6
   maxRadius: 0.9
   useDepthTexture: 1
@@ -12237,7 +12237,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  saturation: 1.03
+  saturation: 1.39
   selectiveCc: 0
   selectiveFromColor: {r: 1, g: 1, b: 1, a: 1}
   selectiveToColor: {r: 1, g: 1, b: 1, a: 1}

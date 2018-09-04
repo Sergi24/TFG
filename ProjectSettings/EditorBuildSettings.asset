@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Night.unity
     guid: fa30df573e272874fad0ca30d5c0b0d8
+  - enabled: 1
+    path: Assets/Scenes/Portals.unity
+    guid: 4f5c27842015a7c4389b151f2eac2606

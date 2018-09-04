@@ -1,6 +1,7 @@
-1 0.1
-2 MusicaTrista
+1 0.08
+2 MusicaAlegre
 0 2
 3 True
 0 0
 1 1
+3 False
