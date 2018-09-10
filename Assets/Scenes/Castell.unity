@@ -2656,9 +2656,51 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 848918a99d11f25f110026ca44295342, type: 2}
+    - target: {fileID: 23193566234517916, guid: 2c7e85f4b03483447a66947c83fb7468,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0f8977e0e122f7448d1d5193241d991, type: 3}
+    - target: {fileID: 65230182728141078, guid: 2c7e85f4b03483447a66947c83fb7468,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.9179194
+      objectReference: {fileID: 0}
+    - target: {fileID: 65230182728141078, guid: 2c7e85f4b03483447a66947c83fb7468,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -0.45896402
+      objectReference: {fileID: 0}
+    - target: {fileID: 65230182728141078, guid: 2c7e85f4b03483447a66947c83fb7468,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 2.703691e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65230182728141078, guid: 2c7e85f4b03483447a66947c83fb7468,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -0.000000015564828
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c7e85f4b03483447a66947c83fb7468, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1437016698 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1858380986527780, guid: 2c7e85f4b03483447a66947c83fb7468,
+    type: 2}
+  m_PrefabInternal: {fileID: 1437016697}
+--- !u!114 &1437016699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437016698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16874ce6456cf7c448acfd3cef6d4161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Portals
 --- !u!1 &1447327169
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,17 +9,17 @@ public enum TipusMusica
     MusicaDePor,
     MusicaAlegre,
     MusicaTrista,
-    MusicaTensa
+    MusicaMenu
 }
 
 public class MusicController : MonoBehaviour {
 
-    public float velocitatMusica = 0.1f, velocitatMaxima = 0.06f, velocitatMinima = 0.12f;
+    public float velocitatMusica, velocitatMaxima, velocitatMinima;
     public GameObject destination;
 
-    private TipusMusica tipusDeMusica = TipusMusica.MusicaTrista;
+    private TipusMusica tipusDeMusica = TipusMusica.MusicaMenu;
     private int frequenciaMusicaDePor = 2, tonalitat = 0;
-    private bool melodiaActivada = false, musicaPausada = true;
+    private bool melodiaActivada = false, musicaPausada = false;
 
     private string[] text = new string[7];
     private float distancia, volumGeneral = 1;
@@ -30,8 +30,17 @@ public class MusicController : MonoBehaviour {
         //System.IO.File.Open()
         text[0] = velocitatMusica.ToString();
         System.IO.File.WriteAllLines(System.IO.Directory.GetCurrentDirectory() + "\\HOLA\\HOLA.txt", text);
-        if (SceneManager.GetActiveScene().name.Equals("Night")) tipusDeMusica = TipusMusica.MusicaDePor;
-        else if (SceneManager.GetActiveScene().name.Equals("Castell")) tipusDeMusica = TipusMusica.MusicaTrista;
+        if (SceneManager.GetActiveScene().name.Equals("Demo"))
+        {
+            tipusDeMusica = TipusMusica.MusicaAlegre;
+            melodiaActivada = true;
+        } else if (SceneManager.GetActiveScene().name.Equals("Night")) tipusDeMusica = TipusMusica.MusicaDePor;
+        else if (SceneManager.GetActiveScene().name.Equals("Castell"))
+        {
+            tipusDeMusica = TipusMusica.MusicaTrista;
+            musicaPausada = true;
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Portals")) tipusDeMusica = TipusMusica.MusicaMenu;
     }
 	
 	// Update is called once per frame
@@ -53,8 +62,8 @@ public class MusicController : MonoBehaviour {
 
             melodiaActivada = !melodiaActivada;
         }
-        Debug.Log(velocitatMusica+ " " +  distancia);
-        //velocitatMusica = 0.08f;
+        //Debug.Log(velocitatMusica+ " " +  distancia);
+        //velocitatMusica = 0.12f;
         text[0] = "1 " + velocitatMusica.ToString();
         text[1] = "2 " + tipusDeMusica.ToString();
         text[2] = "0 " + frequenciaMusicaDePor.ToString();
@@ -62,7 +71,7 @@ public class MusicController : MonoBehaviour {
         text[4] = "0 " + tonalitat.ToString();
         text[5] = "1 " + volumGeneral.ToString();
         text[6] = "3 " + musicaPausada.ToString();
-        //text[3] = "2 " + frequenciaMusicaDePor.ToString();
+
         System.IO.File.WriteAllLines(System.IO.Directory.GetCurrentDirectory() + "\\HOLA\\HOLA.txt", text);
     }
 
