@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CylinderController : MonoBehaviour {
-
-    private void Update()
-    {
-        
-    }
+public class HumanoidController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider)
     {

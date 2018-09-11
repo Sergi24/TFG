@@ -12381,10 +12381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1ad8dc44121504a9e77350747df106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocitatMusica: 0.1
+  velocitatMusica: 0.08
   velocitatMaxima: 0.08
   velocitatMinima: 0.12
   destination: {fileID: 1125402705}
+  melodiaActivada: 1
 --- !u!1001 &1126976666
 Prefab:
   m_ObjectHideFlags: 0

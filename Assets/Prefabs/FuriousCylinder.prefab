@@ -232,6 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4254610995659752}
   - component: {fileID: 108011735423988942}
+  - component: {fileID: 114211043540620702}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -1387,6 +1388,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114211043540620702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905469025865914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee09c47b9ec04c64fb5d01e6e155e028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114364904711310822
 MonoBehaviour:
   m_ObjectHideFlags: 1
